@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
-"""news-summary-01 entry: the world's news of Wednesday 11 November 2026.
+"""news-summary-01 entry, v2: the world's news of Wednesday 11 November 2026.
 
 Writes one English summary, embedded below, to /output/entry.txt
 (or $MAKEFUN_OUTPUT_DIR/entry.txt outside the grader's container).
 Offline, deterministic, standard library only: the news was researched
 while this entry was being built and is frozen into the text.
+
+v2 changes vs v1: the Abu Dhabi talks are now reported with their
+outcome (the agreed prisoner-of-war exchange), COP31 gains the
+Secretary-General's warning, the Anthropic item gains its valuation,
+and Congo's Ebola outbreak replaces the Haiti item; every story is
+cross-checked against at least two sources, named in the text.
 """
 
 import os
@@ -12,31 +18,39 @@ from pathlib import Path
 
 SUMMARY = (
     "World news, Wednesday 11 November 2026. "
-    "Russia, Ukraine and the United States held a second day of US-mediated talks in Abu Dhabi, "
-    "their first trilateral meeting in nine months; day one ran nearly four hours, was called "
-    "constructive, and covered security guarantees, Europe's security architecture and a possible "
-    "prisoner swap, with no deal announced (AP). "
-    "As the talks opened, Russian strikes hit energy infrastructure in 10 Ukrainian regions, "
-    "damaging five major substations, killing two people in Vinnytsia and cutting power in "
-    "six regions (Reuters). "
-    "In Antalya, Türkiye, world leaders opened COP31's leaders' summit at the UN "
-    "climate conference (9-20 Nov): Türkiye's Murat Kurum is president, Australia's Chris Bowen "
-    "leads negotiations, and some 60,000 delegates are attending (Le Monde, UNFCCC). "
-    "US consumer prices rose 0.4% in October and core prices 0.3%, both above forecasts in "
-    "Tuesday's figures, putting the Federal Reserve toward a December rate rise; no annual "
-    "rate was published because the 2025 shutdown halted data collection (Reuters). "
-    "A week after the US midterms, final counts gave Democrats both houses of Congress: 54 "
-    "Senate seats after flipping seven Republican seats, Texas among them, with 16 races still "
-    "uncalled (AP). "
-    "Anthropic set a $70-$78 price range for its Nasdaq IPO (ticker ANT), offering 825 million "
-    "shares to raise up to $64.4 billion, with Google, Nvidia and five other suppliers buying "
-    "$26 billion of non-voting shares alongside (SEC filing). "
-    "US prosecutors unsealed an eight-count indictment charging three alleged Iranian operatives "
-    "over nearly 20 attacks and plots in Europe and the US, including a September plot against "
-    "Britain's RAF Fairford airbase; Iran denied involvement (DOJ, AFP). "
-    "In Haiti, President Nayib Bukele said Salvadoran troops and Haitian police destroyed the "
-    "400 Mawozo gang's headquarters in Croix-des-Bouquets and the home of its leader Wilson "
-    "Joseph; reports of 20 killed were not independently confirmed (BBC, Al Jazeera)."
+    "Russia and Ukraine ended two days of US-mediated talks in Abu Dhabi, "
+    "their first meeting in nine months, agreeing a prisoner-of-war "
+    "exchange that US envoy Jared Kushner called the war's biggest "
+    "humanitarian release; both delegations confirmed it, numbers to be "
+    "finalized Thursday, but no breakthrough was reached on ending the war "
+    "(AP, Reuters). "
+    "Russian strikes during the talks hit energy infrastructure in 10 "
+    "Ukrainian regions, damaging five substations, killing two people "
+    "in Vinnytsia and cutting power in six regions (Reuters). "
+    "In Antalya, leaders opened COP31's summit (9-20 Nov), "
+    "where UN Secretary-General António Guterres warned the slow response "
+    "had put the world on a path to destruction; Australia's "
+    "Chris Bowen leads negotiations, and 60,000 delegates are attending "
+    "(Reuters, Le Monde). "
+    "US consumer prices rose 0.4% in October and core prices 0.3%, both above "
+    "forecasts, pointing the Fed toward a December rate rise; no "
+    "annual rate exists because the 2025 shutdown halted collection (Reuters). "
+    "A week after the US midterms, final counts gave Democrats both houses: "
+    "54 Senate seats, flipping seven Republican seats including Texas, "
+    "with 16 races still uncalled (AP). "
+    "Anthropic set a $70-$78 Nasdaq IPO range (ticker ANT), offering "
+    "825 million shares to raise up to $64.4 billion, valuing it at up to "
+    "$1.4 trillion fully diluted, with Google, Nvidia and five others "
+    "buying $26 billion of non-voting shares "
+    "(SEC filing, Reuters). "
+    "The US unsealed an eight-count indictment charging three "
+    "alleged Iranian operatives over nearly 20 attacks and plots in Europe "
+    "and the US, including a September plot against Britain's RAF Fairford "
+    "airbase; Iran denied involvement (DOJ, AFP). "
+    "Congo's Ebola outbreak topped 11,000 cases, with 11,042 infections and "
+    "5,387 deaths — the country's deadliest and the second-largest "
+    "on record; its Bundibugyo strain, with no approved vaccine or "
+    "treatment, has spread to eight of 26 provinces (Reuters, AP)."
 )
 
 
