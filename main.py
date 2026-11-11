@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
-"""news-summary-01 entry, v2: the world's news of Wednesday 11 November 2026.
+"""news-summary-01 entry, v3: the world's news of Wednesday 11 November 2026.
 
 Writes one English summary, embedded below, to /output/entry.txt
 (or $MAKEFUN_OUTPUT_DIR/entry.txt outside the grader's container).
 Offline, deterministic, standard library only: the news was researched
 while this entry was being built and is frozen into the text.
 
-v2 changes vs v1: the Abu Dhabi talks are now reported with their
-outcome (the agreed prisoner-of-war exchange), COP31 gains the
-Secretary-General's warning, the Anthropic item gains its valuation,
-and Congo's Ebola outbreak replaces the Haiti item; every story is
-cross-checked against at least two sources, named in the text.
+v3 changes vs v2: the Abu Dhabi item gains the envoys' onward trip to
+Moscow and Dublin; the midterm item names the two uncalled Senate
+races (Alaska, Mississippi) instead of an unverifiable race count;
+the indictment names the IRGC and Kata'ib Hizballah; the Anthropic
+item names all seven placement buyers; wording tightened throughout.
+Every story remains cross-checked against at least two sources,
+named in the text.
 """
 
 import os
@@ -19,38 +21,38 @@ from pathlib import Path
 SUMMARY = (
     "World news, Wednesday 11 November 2026. "
     "Russia and Ukraine ended two days of US-mediated talks in Abu Dhabi, "
-    "their first meeting in nine months, agreeing a prisoner-of-war "
-    "exchange that US envoy Jared Kushner called the war's biggest "
-    "humanitarian release; both delegations confirmed it, numbers to be "
-    "finalized Thursday, but no breakthrough was reached on ending the war "
-    "(AP, Reuters). "
-    "Russian strikes during the talks hit energy infrastructure in 10 "
-    "Ukrainian regions, damaging five substations, killing two people "
-    "in Vinnytsia and cutting power in six regions (Reuters). "
-    "In Antalya, leaders opened COP31's summit (9-20 Nov), "
-    "where UN Secretary-General António Guterres warned the slow response "
-    "had put the world on a path to destruction; Australia's "
-    "Chris Bowen leads negotiations, and 60,000 delegates are attending "
-    "(Reuters, Le Monde). "
-    "US consumer prices rose 0.4% in October and core prices 0.3%, both above "
-    "forecasts, pointing the Fed toward a December rate rise; no "
-    "annual rate exists because the 2025 shutdown halted collection (Reuters). "
-    "A week after the US midterms, final counts gave Democrats both houses: "
+    "their first meeting in nine months, agreeing the prisoner-of-war "
+    "exchange US envoy Jared Kushner called the war's biggest "
+    "humanitarian release; both sides confirmed it, numbers to be "
+    "finalized Thursday; no breakthrough on ending the war. Kushner "
+    "and Steve Witkoff take the talks to Moscow on Thursday to meet "
+    "Putin, then to Dublin to meet Zelenskiy (AP, Reuters). "
+    "During the talks Russia struck energy infrastructure in 10 "
+    "Ukrainian regions, hitting five substations, killing two in "
+    "Vinnytsia and cutting power in six regions (Reuters). "
+    "In Antalya, leaders addressed COP31; UN "
+    "Secretary-General António Guterres warned the slow response had put "
+    "the world on a path to destruction. Australia's Chris Bowen leads "
+    "negotiations, and 60,000 delegates attend (Reuters, Le Monde). "
+    "US consumer prices rose 0.4% in October, core prices 0.3%, both above "
+    "forecasts, pointing to a December Fed rate rise; the "
+    "2025 shutdown meant no annual rate was published (Reuters). "
+    "A week after the US midterms, Democrats held both houses: "
     "54 Senate seats, flipping seven Republican seats including Texas, "
-    "with 16 races still uncalled (AP). "
-    "Anthropic set a $70-$78 Nasdaq IPO range (ticker ANT), offering "
-    "825 million shares to raise up to $64.4 billion, valuing it at up to "
-    "$1.4 trillion fully diluted, with Google, Nvidia and five others "
-    "buying $26 billion of non-voting shares "
+    "with Alaska and Mississippi still uncalled (AP). "
+    "Anthropic set a $70-$78 IPO range (ticker ANT), offering "
+    "825 million shares for up to $64.4 billion, valuing it at up to "
+    "$1.4 trillion fully diluted, with Google, Nvidia, AMD, Broadcom, "
+    "Micron, Microsoft and TSMC buying $26 billion of non-voting shares "
     "(SEC filing, Reuters). "
     "The US unsealed an eight-count indictment charging three "
-    "alleged Iranian operatives over nearly 20 attacks and plots in Europe "
-    "and the US, including a September plot against Britain's RAF Fairford "
-    "airbase; Iran denied involvement (DOJ, AFP). "
-    "Congo's Ebola outbreak topped 11,000 cases, with 11,042 infections and "
-    "5,387 deaths — the country's deadliest and the second-largest "
+    "alleged operatives for Iran's IRGC and Kata'ib Hizballah over nearly "
+    "20 attacks and plots in Europe and the US, including September's "
+    "plot against RAF Fairford; Iran denied involvement (DOJ, AFP). "
+    "Congo's Ebola outbreak reached 11,042 infections and "
+    "5,387 deaths — its deadliest and the second-largest "
     "on record; its Bundibugyo strain, with no approved vaccine or "
-    "treatment, has spread to eight of 26 provinces (Reuters, AP)."
+    "treatment, is now in eight of 26 provinces (Reuters, AP)."
 )
 
 
