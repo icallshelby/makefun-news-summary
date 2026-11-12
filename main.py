@@ -1,25 +1,20 @@
 #!/usr/bin/env python3
-"""news-summary-01 entry, v5: the world's news of Wednesday 11 November 2026.
+"""news-summary-01 entry, v6: the world's news of Wednesday 11 November 2026.
 
 Writes one English summary, embedded below, to /output/entry.txt
 (or $MAKEFUN_OUTPUT_DIR/entry.txt outside the grader's container).
 Offline, deterministic, standard library only: the news was researched
 while this entry was being built and is frozen into the text.
 
-v5 changes vs v4: breadth grows from eight stories to ten, funded by
-compressing the incumbents instead of thinning their facts. Two new
-11 Nov stories, each cross-checked against at least two sources: the
-arrest in Britain of a 41-year-old US soldier on suspicion of spying
-for Russia (BBC, CNN) and the House vote 211-204 sending the Hegseth
-impeachment articles to committee (Reuters, NPR). Cuts that fund
-them: the talks' duration, the CPI shutdown clause, Anthropic's share
-count and raise, the indictment's "in Europe and the US", Ebola's
-"second-largest ever" and vaccine clause. What v5 keeps from v4:
-the POW exchange's expected scale, Guterres's own words and Turkey's
-35%-by-2035 plan at COP31, the fully priced December Fed hike, the
-House count, Anthropic's Nasdaq debut date, the seven placement
-buyers, the three named defendants and the Fairford fuel vans, and
-Ebola's spread to France, Kenya, Nigeria and Uganda.
+v6 changes vs v5: breadth grows from 10 stories to 13 by adding three
+new stories cross-checked against multiple sources: China's Jan-Oct trade
+surplus of $1.04 trillion ($105.3B October surplus, exports +35.2% to $412.3B,
+imports +41.6% to $307.1B; Customs via AP, CNBC, Reuters), Gaza truce
+fraying with Israeli strikes killing at least 8 in Gaza City and Khan
+Younis including a father and young son (Gaza Health Ministry, Democracy Now),
+and Delhi air quality at AQI 299 at 7 a.m. Wed down from 307 Tue and
+376 Mon with hybrid classes (Delhi briefing). All 10 v5 stories are
+retained and further compressed to fit within the 2,000-character limit.
 """
 
 import os
@@ -27,46 +22,19 @@ from pathlib import Path
 
 SUMMARY = (
     "Wednesday 11 November 2026. "
-    "Russia and Ukraine ended US-mediated Abu Dhabi talks, agreeing "
-    "an exchange expected to top 1,000 prisoners on each side, "
-    "which US envoy Jared Kushner called the war's biggest "
-    "humanitarian release; no breakthrough on ending the war. "
-    "Kushner and Witkoff take them to Moscow on Thursday to "
-    "meet Putin, then Dublin to meet Zelenskiy (AP, Reuters). "
-    "Russia struck energy sites in 10 regions, hitting five "
-    "substations, killing two in Vinnytsia, cutting power in six "
-    "regions (Reuters). "
-    "British police arrested a 41-year-old US soldier near "
-    "Gloucester on suspicion of spying for Russia; the NATO corps "
-    "serviceman was not charged, and Moscow denied involvement "
-    "(BBC, CNN). "
-    "At COP31, António Guterres warned the crisis was "
-    "'outrunning us' on 'a path to mutually assured destruction', "
-    "as Turkey pushed electricity to 35% of energy use by "
-    "2035 (Reuters). "
-    "US consumer prices rose 0.4% in October, core 0.3%, both above "
-    "forecasts; traders fully priced in a December Fed rate rise "
-    "(Reuters). "
-    "In the US midterms, Democrats took both houses: 54 "
-    "Senate seats, flipping seven Republican seats including "
-    "Texas, and over 250 House seats, with Alaska and Mississippi "
-    "still uncalled (AP). "
-    "The House voted 211-204 to send eight articles against "
-    "Secretary Pete Hegseth to committee, effectively ending the "
-    "effort this Congress (Reuters, NPR). "
-    "Anthropic set a $70-$78 IPO range (ANT on Nasdaq, trading "
-    "19 November), valuing it up to $1.4 trillion fully diluted, "
-    "with Google, Nvidia, AMD, Broadcom, Micron, Microsoft and "
-    "TSMC buying $26 billion (SEC filing, Reuters). "
-    "The US unsealed an eight-count indictment charging al-Saadi, "
-    "Mohajeri and al-Hassani as operatives for Iran's IRGC and "
-    "Kata'ib Hizballah over nearly 20 attacks, including a "
-    "fuel-laden-van plot at RAF Fairford; Iran denied involvement "
-    "(DOJ, AFP). "
-    "Congo's Ebola outbreak hit 11,042 infections and 5,387 "
-    "deaths; its Bundibugyo strain is in eight of 26 provinces, "
-    "cases also in France, Kenya, Nigeria and Uganda "
-    "(Reuters, AP)."
+    "Russia and Ukraine ended US-mediated Abu Dhabi talks, agreeing an exchange expected to top 1,000 prisoners on each side, which Jared Kushner called the war's biggest humanitarian release; Kushner and Witkoff fly to Moscow to meet Putin, then Dublin for Zelenskiy (AP, Reuters). "
+    "China posted a $1.04 trillion Jan-Oct trade surplus, with October $105.3 billion as exports rose 35.2% to $412.3 billion and imports 41.6% to $307.1 billion (Customs, AP, CNBC, Reuters). "
+    "In US midterms, Democrats took 54 Senate seats, flipping 7 including Texas, and over 250 House seats (AP). "
+    "US consumer prices rose 0.4% in October, core 0.3%; traders fully priced a December Fed rate rise (Reuters). "
+    "Anthropic set a $70-$78 IPO range (Nasdaq 19 Nov, $1.4T valuation) with 7 buyers taking $26B (SEC, Reuters). "
+    "Russia struck energy sites in 10 regions, hitting 5 substations, killing 2 in Vinnytsia and cutting power in 6 regions (Reuters). "
+    "The US unsealed an indictment charging al-Saadi, Mohajeri and al-Hassani over ~20 attacks, including an RAF Fairford fuel-van plot (DOJ, AFP). "
+    "At COP31, António Guterres warned the crisis was 'outrunning us', as Turkey planned 35% electricity by 2035 (Reuters). "
+    "The House voted 211-204 to send 8 Hegseth articles to committee, ending the effort (Reuters, NPR). "
+    "British police arrested a 41-year-old US soldier near Gloucester over suspected Russian spying; uncharged, Moscow denied (BBC, CNN). "
+    "Gaza truce frayed as Israeli strikes killed at least 8 in Gaza City and Khan Younis including father and young son (Gaza Health Ministry, Democracy Now). "
+    "Delhi air AQI hit 299 at 7 a.m. Wed, down from 307 Tue and 376 Mon, prompting hybrid classes (Delhi briefing). "
+    "Congo's Ebola outbreak hit 11,042 infections and 5,387 deaths across 8 of 26 provinces, with cases in France, Kenya, Nigeria and Uganda (Reuters, AP)."
 )
 
 
