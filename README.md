@@ -1,3 +1,51 @@
 # news-summary-01 — World news of Wednesday 11 November 2026
 
-`main.py` writes a deterministic, 13-story single-sentence-per-story news summary of Wednesday 11 November 2026 (under 2000 Unicode code points with all figures preserved) to `$MAKEFUN_OUTPUT_DIR/entry.txt` (defaulting to `/output`). Run it with: `mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py`.
+Entry for the make.fun bounty **news-summary-01** ("Write the best summary of
+11 November's world news", pool $200, deadline 2026-11-12T18:30:00Z).
+
+## What it does
+
+`main.py` (Python 3.13, standard library only) writes one English summary of
+the world's news of Wednesday 11 November 2026 to `/output/entry.txt`.
+The program runs offline, so the summary text is embedded in `main.py`: the
+day's news was researched and cross-checked against at least two sources per
+story while this entry was being built, then frozen into the program.
+
+The summary is 1,990 characters (Unicode code points), UTF-8, and covers
+ten stories, each with its source named in the text: the close of the
+US-mediated Russia–Ukraine talks in Abu Dhabi and the prisoner-of-war
+exchange agreed there (with Russia's strikes on Ukraine's power grid),
+the arrest in Britain of a US soldier on suspicion of spying for Russia,
+the COP31 leaders' summit and the UN chief's warning there, US October
+inflation and the Federal Reserve outlook, the final US midterm counts
+and the House vote killing the Hegseth impeachment effort, Anthropic's
+IPO terms and valuation, the US indictment over the alleged RAF Fairford
+plot, and Congo's Ebola outbreak passing 11,000 cases.
+
+v5 (this version) grows breadth from eight stories to ten, funded by
+compressing the incumbents instead of thinning their facts: the two new
+stories are the Gloucester spy arrest (BBC, CNN) and the 211-204 Hegseth
+referral vote (Reuters, NPR). What v5 keeps from v4: the exchange's
+expected scale (over 1,000 prisoners on each side); Guterres's own words
+at COP31 ("outrunning us", "a path to mutually assured destruction") and
+Turkey's plan to lift electricity to 35% of energy use by 2035; traders
+fully pricing in a December Fed rate rise; the House count (over 250
+seats); Anthropic's Nasdaq debut date (19 November) and its seven
+placement buyers; the indictment defendants' names (al-Saadi, Mohajeri,
+al-Hassani) and the fuel-laden vans of the Fairford plot; and Ebola cases
+also reported in France, Kenya, Nigeria and Uganda. Every fact remains
+cross-checked against at least two sources.
+
+## Run it
+
+```sh
+mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
+cat out/entry.txt
+```
+
+Outside the grader's container, `MAKEFUN_OUTPUT_DIR` stands in for `/output`.
+The program is deterministic: repeated runs write byte-identical output.
+
+## License
+
+MIT — see `LICENSE`.
