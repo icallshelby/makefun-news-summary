@@ -30,8 +30,11 @@ def main():
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR")
     if out_dir:
         os.makedirs(out_dir, exist_ok=True)
-        with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
-            f.write(SUMMARY)
+        out_path = os.path.join(out_dir, "entry.txt")
+    else:
+        out_path = "entry.txt"
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(SUMMARY)
     sys.stdout.write(SUMMARY)
 
 if __name__ == "__main__":
